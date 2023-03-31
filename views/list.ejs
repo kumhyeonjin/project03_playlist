@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <%- include('nav.ejs') %>
+
+    <h1>todo list <i class="fa-solid fa-bars"></i></h1>
+    <ul>
+      <% for ( list in post ){ %>
+      <li>
+        <a href="/detail/<%= post[list]._id %>">
+          <p>글번호 : <%= post[list]._id %></p>
+          <p>할일 : <%= post[list].postTitle %></p>
+          <p>날짜 : <%= post[list].postDate %></p>
+        </a>
+        <button class="delete" data-id=" <%= post[list]._id %>">삭제</button>
+      </li>
+      <% } %>
+    </ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+      $(".delete").click(function (e) {
+        let num = e.target.dataset.id;
+        $.ajax({ method: "DELETE", url: "/delete", data: { _id: num } })
+          .done(function (result) {
+            $(e.target).parent("li").fadeOut();
+          })
+          .fail(function (xhr, textStatus, errorThrown) {
+            console.log(xhr, textStatus, errorThrown);
+          });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+:root {
+  font-family: "Gowun Batang", serif;
+  --font-AlbumArti: "Josefin Slab", serif;
+  --font-list_title: "Nanum Pen Script", cursive;
+  font-family: "Noto Sans KR", sans-serif;
+  --font-nav: "Oleo Script", cursive;
+  --font-Song_title: "Sanchez", serif;
+  --font-logo: "Yuji Boku", serif;
+  --font-size: 20px;
+  --mw: 393px;
+  --width: 100%;
+  --gap1: 1rem;
+  --gap2: 2rem;
+}
+
+a {
+  color: #000000;
+}
+.wrap {
+  border: 1px solid red;
+  width: var(--width);
+  max-width: var(--mw);
+  margin: auto;
+  background-image: url(/public/image/back.jpg);
+}
+
+.hd,
+.playlist {
+  text-align: center;
+}
+
+.hd h1 {
+  font-family: var(--font-logo);
+  font-size: 36px;
+  color: #635e5e;
+}
+
+.hd nav {
+  border-bottom: 2px solid #979797;
+  margin: var(--gap2) 0;
+  font-family: var(--font-nav);
+  font-size: 18px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.hd nav a {
+  margin-bottom: 5px;
+}
+
+.playlist {
+  font-family: var(--font-list_title);
+  font-size: 20px;
+}
+
+.playlist li {
+  margin: 3rem 0;
+}
+
+/* index2 */
+
+.list1_title {
+  border: 1px solid red;
+  height: 200px;
+  background: url(/public/image/index2_title_bg.png) no-repeat;
+  background-size: 100%;
+  background-position: center;
+  width: 100%;
+}
+
+.list1_title h1 {
+  text-align: center;
+  margin-top: 40%;
+  font-family: var(--font-list_title);
+  font-size: 32px;
+}
+
+.playlist_1 {
+  margin: var(--gap1);
+  /* border: 1px solid blue; */
+}
+
+.playlist_1 img {
+  margin-left: 23%;
+}
+
+.playlist_1 p {
+  text-align: center;
+}
+.song_title {
+  font-family: var(--font-Song_title);
+  font-size: 20px;
+}
+
+.artist,
+.Album {
+  font-family: var(--font-AlbumArti);
+}
+
+/* index3 */
